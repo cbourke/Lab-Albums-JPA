@@ -1,0 +1,5 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
+\PYG{n+nd}{@OneToMany}\PYG{o}{(}\PYG{n}{fetch}\PYG{o}{=}\PYG{n}{FetchType}\PYG{o}{.}\PYG{n+na}{EAGER}\PYG{o}{)}
+\PYG{n+nd}{@JoinColumn}\PYG{o}{(}\PYG{n}{name}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}albumId\PYGZdq{}}\PYG{o}{,} \PYG{n}{nullable}\PYG{o}{=}\PYG{k+kc}{false}\PYG{o}{)}
+\PYG{n+nd}{@OrderBy}\PYG{o}{(}\PYG{l+s}{\PYGZdq{}trackNumber ASC\PYGZdq{}}\PYG{o}{)}
+\end{Verbatim}
