@@ -114,12 +114,28 @@ lab.
 
 \section*{Java Persistence API}
 
-TODO
+The Java Persistence API (JPA) is a collection of interfaces in Java that
+allows you to manage relational data objects.  The main use of JPA is to 
+facilitate the loading and persistence (saving) of data to a relational
+database without having to directly write JDBC code to interact with the
+database.  Instead, you \emph{annotate} your java classes to make them into
+JPA \emph{entities}.  The annotations specify the mapping of object data
+(member variables) to a table's columns in a database.  JPA then handles the
+basic CRUD interaction with the database.  
+
+In addition, JPA provides the Java Persistence Query Language (JPQL), an 
+SQL-like language that allows you to ``query Java objects'' rather than 
+tables in a database.  JPA essentially provides an extra layer of abstraction
+between a database and your Java code, relieving you of the need to write a
+lot of boilerplate CRUD in JDBC.
+
+This lab will give you some hands-on experience with JPA, but it is assumed that
+you have had some exposure to the basics (as per the pre-lab materials).
 
 \section*{Activities}
 
 Clone the starter code for this lab from GitHub using the following
-url: \url{https://github.com/cbourke/TODO}.
+url: \url{https://github.com/cbourke/Lab-Albums-JPA}.
 
 \section*{Configuration}
 
@@ -172,7 +188,12 @@ member variable in the \mintinline{java}{Album} class.
   
   Run the demo again and observe the results.
   \item Now annotate the \mintinline{java}{AlbumSong} class to make it an 
-  entity.  
+  entity.  Note that it may be necessary to include the following properties
+  in the \mintinline{java}{@JoinColumn} annotation for the relationship to 
+  \mintinline{java}{Album}:
+  
+  \mintinline{java}{insertable=false,updatable=false}
+  
   \item Contrast the way we associated the \mintinline{java}{Album} and 
   \mintinline{java}{Song} classes through the \mintinline{java}{AlbumSong}
   ``join class'' and the way we associated the \mintinline{java}{Band} and
